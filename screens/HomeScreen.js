@@ -1,11 +1,16 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import smallHouse from "../assets/small-house.jpg"
 
 export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.home}>
-        <Text>Home Screen</Text>
+        <View>
+          <TouchableHighlight onPress={() => {this.props.navigation.navigate("HomeList")}}>
+            <Image source={smallHouse} />
+          </TouchableHighlight>
+        </View>
         <Button onPress={() => this.props.navigation.navigate('About')} title="About"/>
       </View>
     )
