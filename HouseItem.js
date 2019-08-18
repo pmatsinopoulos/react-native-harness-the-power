@@ -1,15 +1,16 @@
 import React from "react"
 import { Image, View, StyleSheet, Text } from "react-native"
+import FadeInView from "./FadeInView";
 
 const HouseItem = (item) => {
   return (
-    <View style={styles.houseItemContainer}>
-      <Image source={{ uri: item.images }} style={styles.houseImageStyle}/>
-      <View style={styles.houseDetailsContainer}>
-        <Text>{item.name}</Text>
-        <Text>{item.address}</Text>
-      </View>
-    </View>
+    <FadeInView style={styles.houseDetailsContainer}>
+        <Image source={{ uri: item.images }} style={styles.houseImageStyle}/>
+        <View style={styles.houseDetailsContainer}>
+          <Text>{item.name}</Text>
+          <Text>{item.address}</Text>
+        </View>
+     </FadeInView>
   )
 }
 
